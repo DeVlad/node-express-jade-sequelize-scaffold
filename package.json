@@ -1,0 +1,21 @@
+{
+    "name": "node-express-jade-sequalize-scaffold",
+    "version": "1.0.0",
+    "description": "Scaffold Application",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/DeVlad/node-express-jade-sequalize-scaffold.git"
+    },
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "Deyan Vladkov",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "connect-flash": "^0.1.1",
+        "express": "^4.16.2"
+    }
+}
