@@ -14,9 +14,8 @@ app.use(bodyParser.json());
 module.exports = function (app) {
 
     app.get('/', function (req, res) {
-        res.send('Project index');
+        res.render('index', { title: 'Project Title', message: 'Heading' })
     });
-
 
     app.get('/error', function (req, res) {
         res.render('error', {

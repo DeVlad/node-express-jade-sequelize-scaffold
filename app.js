@@ -5,7 +5,7 @@ var express = require('express'),
 
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-
+var pug = require('pug');
 
 // App config
 var config = require('./config/config');
@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // TODO: View engine
+app.set('view engine', 'pug');
 
 // Flash messages stored in session
 app.use(flash());
