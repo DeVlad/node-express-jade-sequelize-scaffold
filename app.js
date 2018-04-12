@@ -1,11 +1,9 @@
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 8000;
-
-
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
-var pug = require('pug');
+var path = require('path');
 
 // App config
 var config = require('./config/config');
@@ -22,7 +20,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// TODO: View engine
+// View engine
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // Flash messages stored in session
