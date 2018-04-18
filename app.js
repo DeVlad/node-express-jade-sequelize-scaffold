@@ -4,9 +4,24 @@ var express = require('express'),
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 var path = require('path');
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 // App config
 var config = require('./config/config');
+
+// Passport Auth
+require('./config/passport')(passport);
+// Required for passport
+app.use(session({
+    secret: 'VerySecret.ChangeInProduction!',
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(passport.initialize());
+
+// Persistent login sessions
+app.use(passport.session());
 
 // TODO Database
 
@@ -14,6 +29,9 @@ var config = require('./config/config');
 app.locals = ({
     cdn: config.cdn
 });
+
+// Read cookies
+app.use(cookieParser());
 
 app.use(bodyParser.urlencoded({
     extended: true
