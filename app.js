@@ -6,6 +6,7 @@ var flash = require('connect-flash');
 var path = require('path');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
+var passport = require('passport');
 
 // App config
 var config = require('./config/config');

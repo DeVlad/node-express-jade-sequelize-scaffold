@@ -95,12 +95,6 @@ module.exports = function (passport) {
                     }
                     // User is found but the password is wrong
                     if (!bcrypt.compareSync(password, rows[0].password)) {
-                        //console.log('Wrong Pass attempt for :', email);
-                        Log.increaseLoginAttempts(email, function (err, rows) {
-                            //console.log('Increase login attempts error!');
-                            if (err)
-                                return done(err);
-                        });
                         return done(null, false, req.flash('loginMessage', 'Wrong password !'));
                     }                    
                     // Returns successful user
