@@ -20,8 +20,27 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/profile', isLoggedIn, function (req, res) {
+        res.render('profile', {
+            user: req.user
+        });
+    });
+
+    app.get('/logout', function (req, res) {
+        req.logout();
+        res.redirect('/');
+    });    
+
     // Return 404 on missing pages
     app.get('*', function (req, res) {
         res.status(404).send('Error: 404. Page not found !');
     });
 };
+
+// Is authenticated policy
+// Make sure the user is logged
+function isLoggedIn(req, res, next) {    
+    if (req.isAuthenticated())
+        return next();    
+    res.redirect('/');
+}
