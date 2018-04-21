@@ -26,6 +26,14 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/about', function (req, res) {
+        res.render('about')
+    });
+
+    app.get('/contacts', function (req, res) {
+        res.render('about')
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
