@@ -27,12 +27,17 @@ module.exports = function (app) {
     });
 
     app.get('/about', function (req, res) {
-        res.render('about')
+        res.render('about');
     });
 
     app.get('/contacts', function (req, res) {
-        res.render('about')
+        res.render('contacts');
     });
+
+    app.get('/signup', function (req, res) {
+        res.render('signup');
+    });
+
 
     app.get('/logout', function (req, res) {
         req.logout();
