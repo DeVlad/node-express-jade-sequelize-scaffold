@@ -7,5 +7,5 @@ module.exports = {
         'password': '',
         'multipleStatements': 'true'
     },
-    'database': 'myDatabase'    
+    'database': 'myDatabase'
 };
