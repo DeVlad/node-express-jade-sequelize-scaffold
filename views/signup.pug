@@ -10,5 +10,20 @@
 
                     form(method='POST action='/signup')
                         .form-group
+                            label(for='firstname') Name:
+                            input#name.form-control(type='text', placeholder='last name' name='first-name')
+                        .form-group
+                            label(for='firstname') Name:
+                            input#name.form-control(type='text', placeholder='first name' name='first-name')
+                        .form-group
+                            label(for='email') Email:
+                            input#email.form-control(type='email', placeholder='email' name='email')
+                        .form-group
+                            label(for='password') Password:
+                            input#password.form-control(type='password' name='password')
+                        .form-group
+                            label(for='cpassowrd') Confirm Password:
+                            input#pw2.form-control(type='password' name='cpassword')
+                        button.btn.btn-primary(type='submit') Sign up
                         
 
