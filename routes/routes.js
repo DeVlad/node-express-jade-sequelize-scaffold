@@ -26,6 +26,12 @@ module.exports = function (app) {
         });
     });
 
+    app.post('/profile', isLoggedIn, function (req, res) {
+        res.render('profile', {
+            user: req.user
+        });
+    });
+
     app.get('/about', function (req, res) {
         res.render('about');
     });
@@ -35,6 +41,10 @@ module.exports = function (app) {
     });
 
     app.get('/signup', function (req, res) {
+        res.render('signup');
+    });
+
+    app.post('/signup', function (req, res) {
         res.render('signup');
     });
 
