@@ -1,2 +1,14 @@
 body
     h1 Contacts
+
+    form(method='POST action='/signup')
+        .form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='last name' name='first-name')
+        .form-group
+            label(for='message') Message:
+            input#name.form-control(type='textarea', placeholder='message' name='message')
+        .form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='email' name='email')        
+        button.btn.btn-primary(type='submit') Sign up
