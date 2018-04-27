@@ -48,6 +48,14 @@ module.exports = function (app) {
         res.render('signup');
     });
 
+    app.get('/admin', function (req, res) {
+        res.render('admin');
+    });
+
+    app.post('/admin', function (req, res) {
+        res.render('admin');
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
