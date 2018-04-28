@@ -52,8 +52,10 @@ module.exports = function (app) {
         res.render('admin');
     });
 
-    app.post('/admin', function (req, res) {
-        res.render('admin');
+    app.get('/profile/admin', isLoggedIn, isAdmin, function (req, res) {
+        res.render('admin', {
+            user: req.user
+        });
     });
 
     app.get('/logout', function (req, res) {
@@ -73,4 +75,12 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();    
     res.redirect('/');
+}
+
+function isAdmin(req, res, next) {
+    // User witch id 1 is the admin
+    if (req.user.id === 1)
+        return next();
+    // is not admin redirect to profile
+    res.redirect('/profile');
 }
