@@ -44,6 +44,14 @@ module.exports = function (app) {
         res.render('signup');
     });
 
+    app.get('/login', function (req, res) {
+        res.render('login');
+    });
+
+    app.get('/login', function (req, res) {
+        res.render('login');
+    });
+
     app.post('/signup', function (req, res) {
         res.render('signup');
     });
