@@ -54,11 +54,7 @@ module.exports = function (app) {
 
     app.post('/signup', function (req, res) {
         res.render('signup');
-    });
-
-    app.get('/admin', function (req, res) {
-        res.render('admin');
-    });
+    });   
 
     app.get('/profile/admin', isLoggedIn, isAdmin, function (req, res) {
         res.render('admin', {
