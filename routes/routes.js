@@ -40,6 +40,14 @@ module.exports = function (app) {
         res.render('contacts');
     });
 
+    app.get('/search', function (req, res) {
+        res.render('search');
+    });
+
+    app.post('/search', function (req, res) {
+        res.render('search');
+    });
+
     app.get('/signup', function (req, res) {
         res.render('signup');
     });
