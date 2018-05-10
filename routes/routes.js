@@ -73,7 +73,11 @@ module.exports = function (app) {
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
-    });    
+    });
+    
+    app.get('/faq', function (req, res) {
+        res.render('faq');
+    });
 
     // Return 404 on missing pages
     app.get('*', function (req, res) {
