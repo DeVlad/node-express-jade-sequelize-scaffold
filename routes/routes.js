@@ -70,6 +70,12 @@ module.exports = function (app) {
         });
     });
 
+    app.post('/profile/admin/password', isLoggedIn, isAdmin, function (req, res) {
+        res.render('admin', {
+            user: req.user
+        });
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
