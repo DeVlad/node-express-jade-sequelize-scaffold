@@ -71,7 +71,13 @@ module.exports = function (app) {
     });
 
     app.post('/profile/admin/password', isLoggedIn, isAdmin, function (req, res) {
-        res.render('admin', {
+        res.render('password', {
+            user: req.user
+        });
+    });
+
+    app.get('/profile/admin/password', isLoggedIn, isAdmin, function (req, res) {
+        res.render('password', {
             user: req.user
         });
     });
