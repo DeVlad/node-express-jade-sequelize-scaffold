@@ -82,6 +82,18 @@ module.exports = function (app) {
         });
     });
 
+    app.post('/profile/description', isLoggedIn, isAdmin, function (req, res) {
+        res.render('description', {
+            user: req.user
+        });
+    });
+
+    app.get('/profile/description', isLoggedIn, isAdmin, function (req, res) {
+        res.render('description', {
+            user: req.user
+        });
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
