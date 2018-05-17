@@ -94,6 +94,18 @@ module.exports = function (app) {
         });
     });
 
+    app.post('/profile/unsubscribe', isLoggedIn, isAdmin, function (req, res) {
+        res.render('description', {
+            user: req.user
+        });
+    });
+
+    app.get('/profile/unsubscribe', isLoggedIn, isAdmin, function (req, res) {
+        res.render('description', {
+            user: req.user
+        });
+    });
+
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');

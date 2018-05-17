@@ -1,2 +1,17 @@
-body
-    h1 Unsubscribe
+html
+    head    
+        link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+        link(rel="stylesheet", href="/public/css/style.css")
+        script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    body
+        block content
+            .main.container                
+                .row
+                    .col-md-6.col-md-offset-3
+                        h1 Unsubscribe
+                        form(method='POST action='/profile/unsuscribe')
+                            //- ') Todo confirmation
+                            .form-group
+                                label(for='password') Confirm with password:
+                                input#password.form-control(type='password' name='password')
+                            button.btn.btn-primary(type='submit') Unsubscribe
