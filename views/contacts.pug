@@ -4,7 +4,10 @@ body
     form(method='POST action='/signup')
         .form-group
             label(for='name') Name:
-            input#name.form-control(type='text', placeholder='last name' name='first-name')
+            input#name.form-control(type='text', placeholder='Name' name='name')
+        .form-group
+            label(for='phone') Phone:
+            input#name.form-control(type='text', placeholder='Phone number' name='phone')
         .form-group
             label(for='message') Message:
             input#name.form-control(type='textarea', placeholder='message' name='message')
