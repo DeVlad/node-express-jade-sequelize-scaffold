@@ -1,3 +1,6 @@
 body
     h1 Search
-        button.btn.btn-primary(type='submit') Sign up
+        form(method='POST action='/signup')
+            .form-group
+                input#name.form-control(type='text', placeholder='first name' name='first-name')
+            button.btn.btn-primary(type='submit') Sign up
